@@ -18,7 +18,8 @@ html {
 body {
   background: #fff;
   color: rgba(0, 0, 0, 0.85);
-  font-family: 'Source Sans 3', Tahoma, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Source Sans 3", Tahoma, "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
   font-size: clamp(1em, calc(1em + 1vw), 1.5em);
 }
 
@@ -49,7 +50,7 @@ a {
 }
 
 .c-page__section {
-  border-block-start: 1px solid rgba(0,0,0,0.1);
+  border-block-start: 1px solid rgba(0, 0, 0, 0.1);
   padding: 1.25em clamp(1em, calc(1em + 1vw), 2em);
 }
 
@@ -62,9 +63,9 @@ a {
 .c-masthead {
   display: grid;
   grid-template-areas:
-    'brands'
-    'title'
-    'subtitle';
+    "brands"
+    "title"
+    "subtitle";
   grid-template-rows: repeat(3, auto);
 }
 
@@ -72,8 +73,8 @@ a {
   .c-masthead {
     grid-column-gap: 1.56em;
     grid-template-areas:
-      'brands title'
-      'brands subtitle';
+      "brands title"
+      "brands subtitle";
     grid-template-columns: auto 1fr;
     grid-template-rows: repeat(2, auto);
   }
@@ -114,6 +115,7 @@ a {
   display: block;
   inline-size: 2.44em;
   position: relative;
+  flex-shrink: 0;
 }
 
 .c-brands__cloud-four > * {
@@ -124,15 +126,17 @@ a {
   inset-inline-start: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
+  flex-shrink: 0;
 }
 
 .c-brands__org {
-  block-size: auto;
-  inline-size: 2.44em;
+  block-size: 2.44em;
+  inline-size: auto;
 }
 
 .c-brands__heart {
   fill: #d9118f;
+  flex-shrink: 0;
 }
 
 .c-filter {
@@ -152,7 +156,7 @@ a {
 }
 
 .c-tag {
-  border: 1px solid rgba(0,0,0,0.15);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 99em;
   color: inherit;
   display: block;
@@ -185,7 +189,7 @@ a {
   background-size: 50%;
   block-size: 1.56em;
   border-radius: 50%;
-  content: '';
+  content: "";
   display: none;
   inline-size: 1.56em;
   position: relative;
@@ -221,9 +225,9 @@ a {
 }
 
 .c-item--wip .c-item__status::before {
-  background-color: hsl(40,100%,68%);
+  background-color: hsl(40, 100%, 68%);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Crect x='5.71' y='10.71' width='14' height='5.17' transform='translate(-5.68 12.88) rotate(-45)' fill='%23623D17' /%3E%3Cpath d='M9.59,20.07,1.81,22.19l2.12-7.78,12-12a2,2,0,0,1,2.83,0l2.83,2.83a2,2,0,0,1,0,2.83Z' fill='none' stroke='%23623D17' stroke-linejoin='round' stroke-width='2' /%3E%3Crect x='2.22' y='19.78' width='2' height='2' transform='translate(-13.75 8.36) rotate(-45)' fill='%23623D17' /%3E%3Cline x1='19.49' y1='10.17' x2='13.83' y2='4.51' fill='none' stroke='%23623D17' stroke-width='2' /%3E%3C/svg%3E%0A");
-  border-color: #F18D40;
+  border-color: #f18d40;
   display: inline-block;
 }
 
