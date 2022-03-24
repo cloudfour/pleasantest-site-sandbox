@@ -1,10 +1,10 @@
-# Eleventy Sandbox
+# Pleasantest Site Sandbox
 
-A simple Eleventy sandbox template for prototypes and experiments.
+A simple sandbox for prototyping the new Pleasantest site
 
 ## Getting started
 
-Once you've copied/cloned this project, run the following commands to get up and running:
+Once you've cloned this project, run the following commands to get up and running:
 
 1. `npm ci` — Install dependencies
 1. `npm start` — Compile project, start local server, and watch for file updates
