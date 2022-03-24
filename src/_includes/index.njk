@@ -1,0 +1,78 @@
+---
+layout: blank
+css:
+  - https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700&amp;display=swap
+inline_css:
+  - index.css
+collection: all
+---
+
+<div class="c-page">
+  <header class="c-page__section c-page__header">
+    <h1 class="c-masthead">
+      <span class="c-masthead__brands c-brands">
+        <span class="c-brands__cloud-four">
+          <svg viewBox="0 0 141 132" width="70" height="66" aria-hidden="true">
+            <path d="M40.56,82.86c-2.47-.46-9-7.22-10.89-13.08,0,0,.07-2.49,3-5.87,2.72-3.13,34.67-37.84,48.22-43.78a67.48,67.48,0,0,0-10.79-.85c-39.94,0-43.8,28.52-43.8,28.52S2,55.34,2,77.46c0,31.72,39.06,33.32,39.06,33.32a88.35,88.35,0,0,0,12.06-.53,7.4,7.4,0,0,0,5.1-4.06c2.33-5.9,5.59-14.79,9-24.32C54.54,82.51,41.87,83.11,40.56,82.86Z" />
+            <path d="M139.06,70.59c0-28.05-27.45-31-27.45-31S108.32,32.72,99.4,27C97,35.74,90.59,59,90.24,63.41h9.59s1.52,0,1.13,1.89C100,69.6,97.67,80,92.5,80.37c-1.2.08-3.61.25-6.72.43-1.91,7.68-3.89,15.76-5.31,21.59.71.6,6.34,5.19,17.34,5.19,12.91,0,19.14-7,19.14-7C139.84,96.8,139.06,70.59,139.06,70.59Z" />
+            <path d="M81.32,35.67C80,35.67,58.22,57.61,52.84,65l20.59-.82c4.21-11.87,7.89-22.44,9.48-27.1A1.68,1.68,0,0,0,81.32,35.67Z" />
+          </svg>
+          <span class="u-hidden-visually">Cloud Four</span>
+        </span>
+        <svg class="c-brands__heart" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12,21.74C23.84,13.46,23.4,10.55,23.4,8.27a5.46,5.46,0,0,0-5.7-5c-3.56,0-5.7,3.36-5.7,3.36S9.86,3.22,6.3,3.22a5.46,5.46,0,0,0-5.7,5C.6,10.56.16,13.46,12,21.74Z"/>
+        </svg>
+        <img class="c-brands__org" src="{{project.orgIcon}}" width="44" height="44" alt="{{project.orgName}}">
+      </span>
+      <span class="c-masthead__title">{{project.title}}</span>
+      <span class="c-masthead__subtitle">{{project.subtitle}}</span>
+    </h1>
+    <nav class="c-filter u-text-shrink-1">
+      <h2 class="c-filter__label">Showing:</h2>
+      <ul class="c-filter__options c-tags">
+        <li><a class="c-tag" href="/"{% if collection == 'all' %} aria-current="page"{% endif %}>All</a></li>
+        {% for status in statuses %}
+          {% if status.title and collections[status.collection]|length %}
+            <li><a class="c-tag" href="/status/{{status.collection}}"{% if collection == status.collection %} aria-current="page"{% endif %}>{{status.title}}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    {% for post in collections[collection]|reverse %}
+      <article class="c-item c-item--{{post.data.status|default('WIP')|trim|lower}} c-page__section">
+        <header class="c-item__header">
+          <h2 class="c-item__heading">
+            <a class="c-item__link" href="{{post.url}}">
+              {{post.data.title}}
+            </a>
+          </h2>
+        </header>
+        {% if post.data.description %}
+          <p class="u-text-shrink-1">
+            {{post.data.description|safe}}
+          </p>
+        {% endif %}
+        <ul class="c-item__meta u-text-shrink-2">
+          <li class="c-item__status">
+            {% if post.data.status %}
+              {% for status in statuses %}
+                {% if status.collection == post.data.status %}
+                  {{status.title}}
+                {% endif %}
+              {% endfor %}
+            {% else %}
+              WIP
+            {% endif %}
+          </li>
+          <li>{{post.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}}</li>
+          {% if post.data.author %}
+            <li>{{post.data.author}}</li>
+          {% endif %}
+        </ul>
+      </article>
+    {% endfor %}
+  </main>
+</div>

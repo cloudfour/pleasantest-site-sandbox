@@ -1,0 +1,13 @@
+---
+pagination:
+  data: statuses
+  size: 1
+  alias: status
+layout: index
+permalink: "status/{{status.collection}}/index.html"
+eleventyComputed:
+  title: "{{status.title}}"
+  collection: "{{status.collection}}"
+eleventyExcludeFromCollections: true
+---
+

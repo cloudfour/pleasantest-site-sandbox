@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{title}} - {% endif %}{{project.orgName}} - {{project.title}} - {{project.subtitle}}</title>
+  {% for css_url in css %}
+    <link rel="stylesheet" href="{{css_url}}">
+  {% endfor %}
+  {% if inline_css %}
+    <style>
+      {% for inline_css_include in inline_css %}
+        {% include inline_css_include %}
+      {% endfor %}
+    </style>
+  {% endif %}
+</head>
+<body>
+{{content|safe}}
+{% for script_url in scripts -%}
+  <script src="{{script_url}}"></script>
+{%- endfor %}
+</body>
+</html>

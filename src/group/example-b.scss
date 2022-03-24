@@ -1,0 +1,15 @@
+$color: green;
+
+body {
+  color: $color;
+  font-family: sans-serif;
+}
+
+a {
+  color: purple;
+
+  &:hover,
+  &:active {
+    color: red;
+  }
+}
