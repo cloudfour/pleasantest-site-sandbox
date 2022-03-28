@@ -1,5 +1,5 @@
 ---
-title: Example B
+title: Small Screens
 author: Art Vandelay
 date: 2022-01-03
 layout: blank
@@ -9,6 +9,54 @@ scripts:
   - /group/example-b.js
 ---
 
-<p>Example B</p>
+<div class="body-wrapper">
 
-<a href="#">Test link</a>
+  <div class="heading-wrapper">
+    <img class="logo" src="/../assets/images/pleasantest-logo.svg"></img>
+
+    <h2 class="tagline">
+      Frustration-free automated UI testing in a real browser, with a familiar and intuitive syntax
+    </h2>
+
+    <button class="get-started">Get Started</button>
+    <button class="gh">Github</button>
+    <div class="code-block">
+      <p>test(<br>
+        'Toggle Hikes List',<br>
+        withBrowser(async ({ <br>
+          screen, utils, page, user<br>
+        }) => {<br>
+        // Find the hikes button<br>
+        const hikesButton = await screen.getByRole(<br>
+          'button',<br>
+          { name: 'View Hikes' }<br>
+        );<br>
+        // Click it<br>
+        await user.click(aboutBtn);<br>
+        // Confirm the hikes heading is visible<br>
+        await await screen.getByRole(<br>
+          heading,<br>
+          { name: 'Hikes Near You' }<br>
+        ).toBeVisible();<br>
+      );
+      <p>
+    </div>
+  </div>
+  <div class="highlight-wrapper">
+    <div class="highlight1">
+      <h2>Test Real Use Cases in Real Browsers</h2>
+      <img src="https://via.placeholder.com/300">
+      <p>Increase confidence in your code by writing tests that mimic real user behavior and running them in a real browser. When things go wrong, debug your tests using developer tools.</p>
+    </div>
+    <div class="highlight2">
+      <h2>Build Inclusive UIs with Accessibility Testing Features</h2>
+      <img src="https://via.placeholder.com/300">
+      <p>One-of-a-kind tools like Accessibility Tree Snapshots as well as features built into Jest and Testing Library make it easier to understand, improve, and maintain the accessibility of your interfaces.</p>
+    </div>
+    <div class="highlight3">
+      <h2>Get Up to Speed Quickly With Familiar Tools</h2>
+      <img src="https://via.placeholder.com/300">
+      <p>Pleasantest super-charges tools like Jest and Testing Library that you may already be familiar with, while avoiding the drawbacks of simulated browsers</p>
+    </div>
+  </div>
+</div>
