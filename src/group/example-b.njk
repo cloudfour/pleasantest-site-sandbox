@@ -26,7 +26,7 @@ scripts:
       </button>
     </div>
     <div class="code-wrapper">
-      <pre class="code-block"><code class="language-css">test(
+      <pre class="code-block"><code class="language-js">test(
   'Toggle Hikes List',
   withBrowser(async ({
     screen, utils, page, user
@@ -73,7 +73,7 @@ scripts:
       <p>Pleasantest integrates with Jest tests. If you haven't set up Jest yet, <a href="#">here is Jest's getting started guide.</a></p>
       <p>You’ll need to install Jest and Pleasantest:</p>
       <div class="code-wrapper">
-        <pre class="code-block"><code class="language-css">npm i -D jest pleasantest</code></pre>
+        <pre class="code-block"><code class="language-js">npm i -D jest pleasantest</code></pre>
       </div>
     </div>
     <div class="step step2">
@@ -81,7 +81,7 @@ scripts:
       <h3>Write your first test</h3>
       <p>Now you’re ready to write your first test! Wrapping your test callback with `withBrowser` allows you to hook into a real browser with Pleasantest:</p>
       <div class="code-wrapper">
-        <pre class="code-block"><code class="language-css">// If you want to use module imports you’ll need to configure
+        <pre class="code-block"><code class="language-js">// If you want to use module imports you’ll need to configure
   //  Jest and Babel to use ESM
   // See https://jestjs.io/docs/getting-started#using-babel
   const {withBrowser} = require(‘pleasantest’);
@@ -99,7 +99,7 @@ scripts:
       <h3>Add UI markup to your test:</h3>
       <p>Once you’ve created a test there are three ways to insert markup:</p>
       <div class="code-wrapper">
-        <pre class="code-block"><code class="language-css">// For JS frameworks you can run arbitrary JavaScript
+        <pre class="code-block"><code class="language-js">// For JS frameworks you can run arbitrary JavaScript
 await utils.runJS(`
   // ./app could be a .js, .jsx .ts, or .tsx file
   import { App } from './app'
@@ -114,7 +114,7 @@ await utils.runJS(`
       <h3>Interact With Your App In a Real Browser</h3>
       <p>Pleasantest comes prepackaged with helpful utilities to find and interact with elements like a real user:</p>
       <div class="code-wrapper">
-        <pre class="code-block"><code class="language-css">await user.type(
+        <pre class="code-block"><code class="language-js">await user.type(
   await screen.getByRole('
     'textbox',
     { name: 'Pick a Location' }
@@ -134,7 +134,7 @@ await user.click(
       <h3>Make Assertions Against the DOM</h3>
       <p>Use Jest-Dom’s intuitive syntax to confirm your interface responds correctly to user actions:</p>
       <div class="code-wrapper">
-        <pre class="code-block"><code class="language-css">await expect(hikeResults).toBeVisible();</code></pre>
+        <pre class="code-block"><code class="language-js">await expect(hikeResults).toBeVisible();</code></pre>
       </div>
     </div>
     <div class="step step6">
@@ -142,32 +142,35 @@ await user.click(
       <h3>Run your tests</h3>
       <p>Now you can use the Jest CLI commands (link) to run your tests. The <a href="#">testTimeout</a> flag tells Jest to allow the test to run for up to 10 seconds, which is necessary for the first time Pleasantest starts the browser.</p>
       <div class="code-wrapper">
-        <pre class="code-block"><code class="language-css">npx jest --testTimeout=10000</code></pre>
+        <pre class="code-block"><code class="language-js">npx jest --testTimeout=10000</code></pre>
       </div>
     </div>
   </div>
 </div>
 <div class="footer">
+  <div class="section">
     <h2>Documentation</h2>
     <ul>
       <li><a href="#">Github</a></li>
       <li><a href="#">NPM</a></li>
       <li><a href="#">Submit an Issue</a></li>
     </ul>
-
+  </div>
+  <div class="section">
     <h2>Articles</h2>
     <ul>
       <li><a href="#">Introducing Pleasantest</a></li>
       <li><a href="#">Accessibility Tree Snapshots</a></li>
     </ul>
-
+  </div>
+  <div class="section">
     <h2>Examples</h2>
     <ul>
       <li><a href="#">Testing a Reach Modal</a></li>
       <li><a href="#">Intregrating with Vite and Vue</a></li>
       <li><a href="#">Using Accessibility Tree Snapshots</a></li>
     </ul>
-
+  </div>
     <p>Built with love by <a href="#">Cloud Four</a>
       <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="80" height="80"><path d="M6.75,15.12a4.36,4.36,0,0,1-1.91-2.29,1.86,1.86,0,0,1,.52-1c0.48-.55,6.07-6.63,8.44-7.67A11.75,11.75,0,0,0,11.92,4c-7,0-7.67,5-7.67,5S0,10.3,0,14.18C0,19.73,6.84,20,6.84,20A15.3,15.3,0,0,0,9,19.92a1.29,1.29,0,0,0,.89-0.71c0.41-1,1-2.59,1.58-4.26C9.2,15.06,7,15.17,6.75,15.12Z"></path><path d="M24,13c0-4.91-4.81-5.44-4.81-5.44a6.11,6.11,0,0,0-2.14-2.2c-0.43,1.53-1.54,5.61-1.6,6.38h1.68s0.27,0,.2.33c-0.16.75-.58,2.58-1.48,2.64l-1.18.07c-0.33,1.35-.68,2.76-0.93,3.78a4.7,4.7,0,0,0,3,.91,4.59,4.59,0,0,0,3.35-1.23C24.14,17.56,24,13,24,13Z"></path><path d="M13.89,6.86A42.33,42.33,0,0,0,8.9,12l3.61-.14c0.74-2.08,1.38-3.93,1.66-4.74A0.3,0.3,0,0,0,13.89,6.86Z"></path></svg>
     </p>

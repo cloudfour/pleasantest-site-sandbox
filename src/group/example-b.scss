@@ -48,6 +48,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  max-width: 425px;
 }
 
 /* A elements that don't have a class get default styles */
@@ -103,7 +104,7 @@ body {
 
   .code-block {
     border-radius: $border-radius;
-    padding: 1em;
+    padding: $spacing;
     background-image: linear-gradient($navy, $eggplant);
     color: $white;
     font-family: monospace;
@@ -129,7 +130,7 @@ body {
     }
 
     .ctas {
-      padding-bottom: $spacing;
+      padding-bottom: 2em;
       button {
         width: 80%;
         height: 2.5em;
@@ -243,6 +244,10 @@ body {
   background-image: linear-gradient($violet, $eggplant);
   padding: $spacing;
 
+  .section {
+    padding: $spacing 0;
+  }
+
   a {
     color: $white;
   }
@@ -261,7 +266,7 @@ body {
 .token.comment,
 .token.doctype,
 .token.prolog {
-  color: #997f66;
+  color: #dedede;
 }
 .token.punctuation {
   opacity: 0.7;
@@ -275,7 +280,7 @@ body {
 .token.property,
 .token.symbol,
 .token.tag {
-  color: #f67c4c;
+  color: $orange-light;
 }
 .token.attr-name,
 .token.builtin,
@@ -283,20 +288,20 @@ body {
 .token.inserted,
 .token.selector,
 .token.string {
-  color: #65dc90;
+  color: $green;
 }
-.language-css .token.string,
+.language-js .token.string,
 .style .token.string,
 .token.entity,
 .token.operator,
 .token.url,
 .token.variable {
-  color: #ffce1c;
+  color: $yellow;
 }
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  color: #d1939e;
+  color: #65dc90;
 }
 .token.important,
 .token.regex {
