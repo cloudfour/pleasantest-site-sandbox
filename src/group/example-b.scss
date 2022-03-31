@@ -109,7 +109,6 @@ body {
     font-family: monospace;
     overflow-x: auto;
     text-align: left;
-    // width: 20em;
   }
 
   .heading-wrapper {
@@ -117,6 +116,7 @@ body {
     padding-bottom: $wrapper-padding;
     .logo {
       width: 15em;
+      display: inline;
     }
 
     h2 {
@@ -128,27 +128,30 @@ body {
       color: $blue;
     }
 
-    button {
-      width: 80%;
-      height: 2.5em;
-      border: none;
-      color: $white;
-      border-radius: $border-radius;
-      margin-top: $spacing;
-    }
+    .ctas {
+      padding-bottom: $spacing;
+      button {
+        width: 80%;
+        height: 2.5em;
+        border: none;
+        color: $white;
+        border-radius: $border-radius;
+      }
 
-    img {
-      width: 1.25em;
-      display: inline;
-      vertical-align: baseline;
-    }
+      .get-started {
+        background-color: $orange;
+      }
 
-    .get-started {
-      background-color: $orange;
-    }
-
-    .gh {
-      background-color: $violet;
+      .gh {
+        background-color: $violet;
+        margin-top: $spacing;
+        svg {
+          fill: $white;
+          vertical-align: middle;
+          width: 1.5em;
+          margin-top: -0.25em;
+        }
+      }
     }
   }
 
@@ -244,14 +247,11 @@ body {
     color: $white;
   }
 
-  img {
-    width: 1.25em;
+  svg {
+    fill: $white;
     display: inline;
     vertical-align: middle;
-  }
-  svg {
-    color: white;
-    fill: white;
+    width: 1.5em;
   }
 }
 
