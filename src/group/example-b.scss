@@ -15,6 +15,8 @@ $border-radius: 8px;
 $font-size: 18px;
 $wrapper-padding: 2em;
 $spacing: 1em;
+$main-font: "filson-pro";
+$secondary-font: "open-sans";
 
 /* Box sizing rules */
 *,
@@ -79,7 +81,7 @@ select {
 body {
   color: $grey;
   font-size: $font-size;
-  font-family: "open-sans", sans-serif;
+  font-family: $secondary-font, sans-serif;
 
   a {
     color: $orange;
@@ -87,12 +89,12 @@ body {
 
   button {
     font-size: $font-size;
-    font-family: "filson-pro", sans-serif;
+    font-family: $main-font, sans-serif;
   }
 
   h2 {
     font-size: $h2;
-    font-family: "FilsonProBold";
+    font-family: $main-font, sans-serif;
   }
   h3 {
     font-size: $h3;
