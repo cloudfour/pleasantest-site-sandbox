@@ -79,7 +79,7 @@ select {
 body {
   color: $grey;
   font-size: $font-size;
-  font-family: "Open Sans";
+  font-family: "open-sans", sans-serif;
 
   a {
     color: $orange;
@@ -87,7 +87,7 @@ body {
 
   button {
     font-size: $font-size;
-    font-family: "FilsonProBold";
+    font-family: "filson-pro", sans-serif;
   }
 
   h2 {
