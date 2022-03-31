@@ -103,12 +103,12 @@ body {
 
   .code-block {
     border-radius: $border-radius;
-    // padding: 1em;
+    padding: 1em;
     background-image: linear-gradient($navy, $eggplant);
     color: $white;
     font-family: monospace;
     overflow-x: auto;
-    // text-align: left;
+    text-align: left;
     // width: 20em;
   }
 

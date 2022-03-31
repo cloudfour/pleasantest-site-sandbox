@@ -22,24 +22,23 @@ scripts:
     <button class="gh">Github <img class="gh-logo" src="/../assets/images/github-logo.svg"></button>
     <div class="code-wrapper">
       <pre class="code-block"><code class="language-css">test(
-        'Toggle Hikes List',
-        withBrowser(async ({
-          screen, utils, page, user
-        }) => {
-        // Find the hikes button
-        const hikesButton = await screen.getByRole(
-          'button',
-          { name: 'View Hikes' }
-        );
-        // Click it
-        await user.click(aboutBtn);
-        // Confirm the hikes heading is visible
-        await await screen.getByRole(
-          heading,
-          { name: 'Hikes Near You' }
-        ).toBeVisible();
-      );
-      </code></pre>
+  'Toggle Hikes List',
+  withBrowser(async ({
+    screen, utils, page, user
+  }) => {
+  // Find the hikes button
+  const hikesButton = await screen.getByRole(
+    'button',
+    { name: 'View Hikes' }
+  );
+  // Click it
+  await user.click(aboutBtn);
+  // Confirm the hikes heading is visible
+  await await screen.getByRole(
+    heading,
+    { name: 'Hikes Near You' }
+  ).toBeVisible();
+);</code></pre>
     </div>
   </div>
   <div class="highlight-wrapper">
@@ -69,9 +68,7 @@ scripts:
       <p>Pleasantest integrates with Jest tests. If you haven't set up Jest yet, <a href="#">here is Jest's getting started guide.</a></p>
       <p>You’ll need to install Jest and Pleasantest:</p>
       <div class="code-wrapper">
-        <pre class="code-block"><code class="language-css">
-          npm i -D jest pleasantest
-        </code></pre>
+        <pre class="code-block"><code class="language-css">npm i -D jest pleasantest</code></pre>
       </div>
     </div>
     <div class="step step2">
@@ -79,19 +76,17 @@ scripts:
       <h3>Write your first test</h3>
       <p>Now you’re ready to write your first test! Wrapping your test callback with `withBrowser` allows you to hook into a real browser with Pleasantest:</p>
       <div class="code-wrapper">
-        <pre class="code-block"><code class="language-css">
-          // If you want to use module imports you’ll need to configure
-          //  Jest and Babel to use ESM
-          // See https://jestjs.io/docs/getting-started#using-babel
-          const {withBrowser} = require(‘pleasantest’);
+        <pre class="code-block"><code class="language-css">// If you want to use module imports you’ll need to configure
+  //  Jest and Babel to use ESM
+  // See https://jestjs.io/docs/getting-started#using-babel
+  const {withBrowser} = require(‘pleasantest’);
 
-          test(
-            'test name',
-            withBrowser(async () => {
-              // Your test code here
-            }),
-          );
-        </code></pre>
+  test(
+    'test name',
+    withBrowser(async () => {
+      // Your test code here
+    }),
+);</code></pre>
       </div>
     </div>
     <div class="step step3">
@@ -99,16 +94,14 @@ scripts:
       <h3>Add UI markup to your test:</h3>
       <p>Once you’ve created a test there are three ways to insert markup:</p>
       <div class="code-wrapper">
-        <pre class="code-block"><code class="language-css">
-          // For JS frameworks you can run arbitrary JavaScript
-          await utils.runJS(`
-            // ./app could be a .js, .jsx .ts, or .tsx file
-            import { App } from './app'
-            import { render } from 'react-dom'
+        <pre class="code-block"><code class="language-css">// For JS frameworks you can run arbitrary JavaScript
+await utils.runJS(`
+  // ./app could be a .js, .jsx .ts, or .tsx file
+  import { App } from './app'
+  import { render } from 'react-dom'
 
-            render(<App />, document.body)
-          `);
-        </code></pre>
+  render(<App />, document.body)
+  `);</code></pre>
       </div>
     </div>
     <div class="step step4">
@@ -116,21 +109,19 @@ scripts:
       <h3>Interact With Your App In a Real Browser</h3>
       <p>Pleasantest comes prepackaged with helpful utilities to find and interact with elements like a real user:</p>
       <div class="code-wrapper">
-        <pre class="code-block"><code class="language-css">
-          await user.type(
-            await screen.getByRole('
-              'textbox',
-              { name: 'Pick a Location' }
-            ),
-            'Portland Oregon'
-          );
-          await user.click(
-            await screen.getByRole('
-              button,
-              { name: 'Find Hikes' }
-            )
-          );
-        </code></pre>
+        <pre class="code-block"><code class="language-css">await user.type(
+  await screen.getByRole('
+    'textbox',
+    { name: 'Pick a Location' }
+  ),
+  'Portland Oregon'
+);
+await user.click(
+  await screen.getByRole('
+    button,
+    { name: 'Find Hikes' }
+  )
+);</code></pre>
       </div>
     </div>
     <div class="step step5">
@@ -138,9 +129,7 @@ scripts:
       <h3>Make Assertions Against the DOM</h3>
       <p>Use Jest-Dom’s intuitive syntax to confirm your interface responds correctly to user actions:</p>
       <div class="code-wrapper">
-        <pre class="code-block"><code class="language-css">
-          await expect(hikeResults).toBeVisible();
-        </code></pre>
+        <pre class="code-block"><code class="language-css">await expect(hikeResults).toBeVisible();</code></pre>
       </div>
     </div>
     <div class="step step6">
@@ -148,9 +137,7 @@ scripts:
       <h3>Run your tests</h3>
       <p>Now you can use the Jest CLI commands (link) to run your tests. The <a href="#">testTimeout</a> flag tells Jest to allow the test to run for up to 10 seconds, which is necessary for the first time Pleasantest starts the browser.</p>
       <div class="code-wrapper">
-        <pre class="code-block"><code class="language-css">
-          npx jest --testTimeout=10000
-        </code></pre>
+        <pre class="code-block"><code class="language-css">npx jest --testTimeout=10000</code></pre>
       </div>
     </div>
   </div>
