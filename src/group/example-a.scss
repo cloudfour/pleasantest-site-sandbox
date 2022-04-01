@@ -205,32 +205,56 @@ body {
         "heading"
         "image"
         "content";
+
+      h2 {
+        grid-area: heading;
+        padding-top: 3em;
+        padding-right: 10em;
+      }
+
+      p {
+        grid-area: content;
+        padding-top: $spacing;
+        padding-right: 12em;
+      }
+
+      img {
+        grid-area: image;
+      }
+
       @media only screen and (min-width: 50em) {
+        padding-top: 10em;
         margin: 0 auto;
         display: grid;
         grid-template-areas:
           "heading image"
           "content image"
           ". image";
-        h2 {
-          grid-area: heading;
-          padding-top: 3em;
-        }
-        p {
-          grid-area: content;
-          padding-top: $spacing;
-          width: 60%;
-        }
 
-        img {
-          grid-area: image;
+        &:nth-of-type(even) {
+          text-align: right;
+          grid-template-areas:
+            "image heading"
+            "image content"
+            "image .";
+
+          h2 {
+            padding-left: 12em;
+            padding-right: 0;
+          }
+          p {
+            padding-left: 13em;
+            padding-right: 0;
+          }
         }
       }
+
       padding: $wrapper-padding 0;
       img {
         margin: $spacing 0;
       }
     }
+
     .highlight1 {
       h2 {
         color: $red;
@@ -258,6 +282,7 @@ body {
     p {
       padding: 0.5em 0;
     }
+
     .circle {
       display: flex;
       justify-content: center;
@@ -304,6 +329,16 @@ body {
     .step6 {
       .circle {
         background-color: $eggplant;
+      }
+    }
+    @media only screen and (min-width: 50em) {
+      padding-top: 10em;
+      .step {
+        padding-top: 5em;
+      }
+
+      .step6 {
+        padding-bottom: 6em;
       }
     }
   }
