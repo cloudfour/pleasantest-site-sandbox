@@ -1,0 +1,396 @@
+$grey: #4a4545;
+$white: #fff;
+$blue: #1045b4;
+$orange: #cb4c00;
+$orange-light: #f67c4c;
+$red: #c44f59;
+$violet: #5b3bbc;
+$navy: #132846;
+$eggplant: #482762;
+$green: #65dc90;
+$yellow: #ffce1c;
+$h2: 25px;
+$h3: 22px;
+$border-radius: 8px;
+$font-size: 18px;
+$wrapper-padding: 2em;
+$spacing: 1em;
+$main-font: "filson-pro";
+$secondary-font: "open-sans";
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style-type: none;
+  margin-left: -$spacing;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  color: $grey;
+  font-size: $font-size;
+  font-family: $secondary-font, sans-serif;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+
+  a {
+    color: $orange;
+  }
+
+  button {
+    font-size: $font-size;
+    font-family: $main-font, sans-serif;
+  }
+
+  h2 {
+    font-size: $h2;
+    font-family: $main-font, sans-serif;
+  }
+  h3 {
+    font-size: $h3;
+  }
+}
+
+.body-wrapper {
+  padding: $spacing;
+  max-width: 65em;
+  margin: 0 auto;
+
+  .code-block {
+    border-radius: $border-radius;
+    padding: $spacing;
+    background-image: linear-gradient($navy, $eggplant);
+    color: $white;
+    font-family: monospace;
+    overflow-x: auto;
+    text-align: left;
+  }
+
+  .heading-wrapper {
+    text-align: center;
+    padding-bottom: $wrapper-padding;
+    margin: 0 auto;
+    // grid-template-columns: repeat(2, 1fr);
+
+    @media only screen and (min-width: 50em) {
+      display: grid;
+      grid-gap: 3em;
+      grid-template-areas:
+        "logo logo"
+        "tagline code"
+        "ctas code";
+
+      .logo {
+        grid-area: logo;
+      }
+
+      .tagline {
+        grid-area: tagline;
+        align-self: end;
+        text-align: left;
+      }
+
+      .ctas {
+        grid-area: ctas;
+      }
+
+      .code-wrapper {
+        grid-area: code;
+      }
+    }
+
+    .logo {
+      width: 15em;
+      display: inline;
+    }
+
+    h2 {
+      padding: 2em 0;
+    }
+
+    .tagline {
+      color: $blue;
+    }
+
+    .ctas {
+      padding-bottom: 2em;
+
+      button {
+        width: 80%;
+        height: 2.5em;
+        border: none;
+        color: $white;
+        border-radius: $border-radius;
+      }
+
+      .get-started {
+        background-color: $orange;
+      }
+
+      .gh {
+        background-color: $violet;
+        margin-top: $spacing;
+        svg {
+          fill: $white;
+          vertical-align: middle;
+          width: 1.5em;
+          margin-top: -0.25em;
+        }
+      }
+
+      @media only screen and (min-width: 50em) {
+        display: flex;
+
+        button {
+          width: 40%;
+        }
+
+        .gh {
+          margin-top: 0;
+          margin-left: $spacing;
+        }
+      }
+    }
+  }
+
+  .highlight-wrapper {
+    .section {
+      display: grid;
+      grid-template-areas:
+        "heading"
+        "image"
+        "content";
+      @media only screen and (min-width: 50em) {
+        margin: 0 auto;
+        display: grid;
+        grid-template-areas:
+          "heading image"
+          "content image"
+          ". image";
+        h2 {
+          grid-area: heading;
+          padding-top: 3em;
+        }
+        p {
+          grid-area: content;
+          padding-top: $spacing;
+          width: 60%;
+        }
+
+        img {
+          grid-area: image;
+        }
+      }
+      padding: $wrapper-padding 0;
+      img {
+        margin: $spacing 0;
+      }
+    }
+    .highlight1 {
+      h2 {
+        color: $red;
+      }
+    }
+
+    .highlight2 {
+      h2 {
+        color: $violet;
+      }
+    }
+
+    .highlight3 {
+      h2 {
+        color: $orange;
+      }
+    }
+  }
+
+  .instructions-wrapper {
+    padding: $wrapper-padding 0;
+    max-width: 40em;
+    margin: 0 auto;
+
+    p {
+      padding: 0.5em 0;
+    }
+    .circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 3.5em;
+      height: 3.5em;
+      border-radius: 100em;
+      color: $white;
+      margin: 0 auto;
+    }
+
+    .step {
+      padding: $spacing 0;
+      .circle {
+        margin-bottom: $spacing;
+      }
+    }
+    .step1 {
+      .circle {
+        background-color: $red;
+      }
+    }
+    .step2 {
+      .circle {
+        background-color: $orange;
+      }
+    }
+    .step3 {
+      .circle {
+        background-color: $yellow;
+        color: $grey;
+      }
+    }
+    .step4 {
+      .circle {
+        background-color: $blue;
+      }
+    }
+    .step5 {
+      .circle {
+        background-color: $violet;
+      }
+    }
+    .step6 {
+      .circle {
+        background-color: $eggplant;
+      }
+    }
+  }
+}
+
+.footer {
+  color: $white;
+  background-image: linear-gradient($violet, $eggplant);
+  padding: $spacing;
+  @media only screen and (min-width: 50em) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .section {
+    padding: $spacing 0;
+  }
+
+  a {
+    color: $white;
+  }
+
+  svg {
+    fill: $white;
+    display: inline;
+    vertical-align: middle;
+    width: 1.5em;
+  }
+}
+
+// code snippet colors from prism
+
+.token.cdata,
+.token.comment,
+.token.doctype,
+.token.prolog {
+  color: #dedede;
+}
+.token.punctuation {
+  opacity: 0.7;
+}
+.token.namespace {
+  opacity: 0.7;
+}
+.token.boolean,
+.token.constant,
+.token.number,
+.token.property,
+.token.symbol,
+.token.tag {
+  color: $orange-light;
+}
+.token.attr-name,
+.token.builtin,
+.token.char,
+.token.inserted,
+.token.selector,
+.token.string {
+  color: $green;
+}
+.language-js .token.string,
+.style .token.string,
+.token.entity,
+.token.operator,
+.token.url,
+.token.variable {
+  color: $yellow;
+}
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #65dc90;
+}
+.token.important,
+.token.regex {
+  color: #e90;
+}
+.token.bold,
+.token.important {
+  font-weight: 700;
+}
+.token.italic {
+  font-style: italic;
+}
+.token.entity {
+  cursor: help;
+}
+.token.deleted {
+  color: red;
+}
