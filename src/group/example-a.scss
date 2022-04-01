@@ -209,13 +209,11 @@ body {
       h2 {
         grid-area: heading;
         padding-top: 3em;
-        padding-right: 10em;
       }
 
       p {
         grid-area: content;
         padding-top: $spacing;
-        padding-right: 12em;
       }
 
       img {
@@ -230,6 +228,14 @@ body {
           "heading image"
           "content image"
           ". image";
+
+        h2 {
+          padding-right: 10em;
+        }
+
+        p {
+          padding-right: 12em;
+        }
 
         &:nth-of-type(even) {
           text-align: right;
