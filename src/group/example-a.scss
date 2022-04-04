@@ -18,6 +18,10 @@ $spacing: 1em;
 $main-font: "filson-pro";
 $secondary-font: "open-sans";
 
+:root {
+  --offset: 0.5em;
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -85,6 +89,7 @@ body {
   button {
     font-size: $font-size;
     font-family: $main-font, sans-serif;
+    cursor: pointer;
   }
 
   h2 {
@@ -101,14 +106,27 @@ body {
   max-width: 65em;
   margin: 0 auto;
 
-  .code-block {
+  .code-wrapper {
     border-radius: $border-radius;
     padding: $spacing;
     background-image: linear-gradient($navy, $eggplant);
     color: $white;
     font-family: monospace;
-    overflow-x: auto;
+    // overflow-x: auto;
     text-align: left;
+    position: relative;
+  }
+
+  .offset::before {
+    border: 3px solid $violet;
+    content: "";
+    position: absolute;
+    left: calc(var(--offset) * -1);
+    bottom: calc(var(--offset) * -1);
+    right: var(--offset);
+    top: var(--offset);
+    z-index: -1;
+    border-radius: inherit;
   }
 
   .heading-wrapper {
@@ -218,6 +236,7 @@ body {
 
       img {
         grid-area: image;
+        margin: $spacing 0;
       }
 
       @media only screen and (min-width: 50em) {
@@ -253,11 +272,6 @@ body {
             padding-right: 0;
           }
         }
-      }
-
-      padding: $wrapper-padding 0;
-      img {
-        margin: $spacing 0;
       }
     }
 
@@ -298,43 +312,74 @@ body {
       border-radius: 100em;
       color: $white;
       margin: 0 auto;
+
+      &::before {
+        border: 3px solid $grey;
+        content: "";
+        position: absolute;
+        left: calc(var(--offset) * -1);
+        bottom: calc(var(--offset) * -1);
+        right: 0.25em;
+        top: 0.25em;
+        z-index: 1;
+        border-radius: inherit;
+      }
     }
 
     .step {
       padding: $spacing 0;
       .circle {
         margin-bottom: $spacing;
+        position: relative;
       }
     }
     .step1 {
       .circle {
         background-color: $red;
+        &::before {
+          border: 3px solid darken($red, 20%);
+        }
       }
     }
     .step2 {
       .circle {
         background-color: $orange;
+        &::before {
+          border: 3px solid darken($orange, 10%);
+        }
       }
     }
     .step3 {
       .circle {
         background-color: $yellow;
         color: $grey;
+        &::before {
+          border: 3px solid darken($yellow, 20%);
+        }
       }
     }
     .step4 {
       .circle {
         background-color: $blue;
+        &::before {
+          border: 3px solid darken($blue, 15%);
+        }
       }
     }
     .step5 {
       .circle {
         background-color: $violet;
+        &::before {
+          border: 3px solid darken($violet, 15%);
+        }
       }
     }
     .step6 {
       .circle {
         background-color: $eggplant;
+        &::before {
+          border: 3px solid darken($eggplant, 10%);
+        }
       }
     }
     @media only screen and (min-width: 50em) {
@@ -354,9 +399,14 @@ body {
   color: $white;
   background-image: linear-gradient($violet, $eggplant);
   padding: $spacing;
-  @media only screen and (min-width: 50em) {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+  .footer__inner {
+    max-width: 65em;
+    margin: 0 auto;
+    @media only screen and (min-width: 50em) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   .section {
