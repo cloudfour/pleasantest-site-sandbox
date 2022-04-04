@@ -10,8 +10,9 @@ css:
 <link rel="stylesheet" href="https://use.typekit.net/wlj8wil.css">
 
 <div class="body-wrapper">
-
+<div class="test">
   <div class="heading-wrapper">
+
     <img class="logo" src="/../assets/images/pleasantest-logo.svg"></img>
 
     <h2 class="tagline">
@@ -25,7 +26,8 @@ css:
       </svg>
       </button>
     </div>
-    <div class="code-wrapper offset">
+    <div class="offset">
+      <div class="code-wrapper">
       <pre class="code-block"><code class="language-js">test(
   'Toggle Hikes List',
   withBrowser(async ({
@@ -44,7 +46,9 @@ css:
     { name: 'Hikes Near You' }
   ).toBeVisible();
 );</code></pre>
+      </div>
     </div>
+</div>
   </div>
   <div class="highlight-wrapper">
     <div class="section highlight1">
@@ -73,7 +77,7 @@ css:
       <p>Pleasantest integrates with Jest tests. If you haven't set up Jest yet, <a href="#">here is Jest's getting started guide.</a></p>
       <p>You’ll need to install Jest and Pleasantest:</p>
       <div class="code-wrapper offset">
-        <pre class="code-block"><code class="language-js">npm i -D jest pleasantest</code></pre>
+        <pre class="code-block"><code class="language-zsh">npm i -D jest pleasantest</code></pre>
       </div>
     </div>
     <div class="step step2">
@@ -142,7 +146,7 @@ await user.click(
       <h3>Run your tests</h3>
       <p>Now you can use the Jest CLI commands (link) to run your tests. The <a href="#">testTimeout</a> flag tells Jest to allow the test to run for up to 10 seconds, which is necessary for the first time Pleasantest starts the browser.</p>
       <div class="code-wrapper offset">
-        <pre class="code-block"><code class="language-js">npx jest --testTimeout=10000</code></pre>
+        <pre class="code-block"><code class="language-zsh">npx jest --testTimeout=10000</code></pre>
       </div>
     </div>
   </div>

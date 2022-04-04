@@ -103,7 +103,6 @@ body {
     }
 
     &::after {
-      border: 3px solid $grey;
       content: "";
       border-radius: inherit;
       position: absolute;
@@ -123,11 +122,12 @@ body {
   }
 
   h2 {
-    font-size: $h2;
+    // font-size: $h2;
+    font-size: clamp(2rem, 2.25vw, 3rem);
     font-family: $main-font, sans-serif;
   }
   h3 {
-    font-size: $h3;
+    font-size: clamp(1.5rem, 1.5vw, 2rem);
   }
 }
 
@@ -136,17 +136,33 @@ body {
   max-width: 65em;
   margin: 0 auto;
 
+  .test {
+    // background-color: lighten($orange, 55%);
+    padding: 0;
+    margin: 0;
+    max-width: 100em;
+  }
+
   .code-wrapper {
     border-radius: $border-radius;
     padding: $spacing;
     background-image: linear-gradient($navy, $eggplant);
     color: $white;
     font-family: monospace;
-    // overflow-x: auto;
+    overflow-x: auto;
     text-align: left;
     position: relative;
+    max-width: 100%;
+
+    pre {
+      margin: 0;
+    }
   }
 
+  .offset {
+    position: relative;
+    border-radius: $border-radius;
+  }
   .offset::before {
     border: 3px solid $violet;
     content: "";
@@ -157,6 +173,7 @@ body {
     top: var(--offset);
     z-index: -1;
     border-radius: inherit;
+    // mix-blend-mode: luminosity;
   }
 
   .heading-wrapper {
@@ -165,8 +182,10 @@ body {
     margin: 0 auto;
 
     @media only screen and (min-width: 50em) {
+      max-width: 100%;
       display: grid;
       grid-gap: 3em;
+      grid-template-columns: 20em minmax(0, 1fr);
       grid-template-areas:
         "logo logo"
         "tagline code"
@@ -180,15 +199,20 @@ body {
         grid-area: tagline;
         align-self: end;
         text-align: left;
+        // min-width: 20em;
       }
 
       .ctas {
         grid-area: ctas;
       }
 
-      .code-wrapper {
+      .offset {
         grid-area: code;
       }
+    }
+
+    @media only screen and (min-width: 60em) {
+      grid-template-columns: 50% minmax(0, 1fr);
     }
 
     .logo {
@@ -292,19 +316,17 @@ body {
         }
 
         &:nth-of-type(even) {
-          text-align: right;
+          // text-align: right;
           grid-template-areas:
             "image heading"
             "image content"
             "image .";
 
           h2 {
-            padding-left: 12em;
-            padding-right: 0;
           }
           p {
-            padding-left: 13em;
-            padding-right: 0;
+            // margin-left: 13em;
+            // padding-right: 0;
           }
         }
       }
@@ -349,11 +371,10 @@ body {
       margin: 0 auto;
 
       &::before {
-        border: 3px solid $grey;
         content: "";
         position: absolute;
-        left: calc(var(--offset) * -1);
-        bottom: calc(var(--offset) * -1);
+        left: calc(var(--offset) * -0.75);
+        bottom: calc(var(--offset) * -0.75);
         right: 0.25em;
         top: 0.25em;
         z-index: -1;
