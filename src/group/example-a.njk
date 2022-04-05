@@ -11,7 +11,7 @@ css:
 
 <div class="body-wrapper">
 <div class="test">
-  <div class="heading-wrapper">
+  <div class="heading-wrapper wrapper">
 
     <img class="logo" src="/../assets/images/pleasantest-logo.svg"></img>
 
@@ -50,7 +50,7 @@ css:
     </div>
 </div>
   </div>
-  <div class="highlight-wrapper">
+  <div class="highlight-wrapper wrapper">
     <div class="section highlight1">
       <h2>Test Real Use Cases in Real Browsers</h2>
       <img src="https://via.placeholder.com/300">
@@ -67,9 +67,11 @@ css:
       <p>Pleasantest super-charges tools like Jest and Testing Library that you may already be familiar with, while avoiding the drawbacks of simulated browsers</p>
     </div>
   </div>
-  <div class="instructions-wrapper">
-    <h2 style="color: #5b3bbc">Getting Started</h2>
-    <p class="intro">Follow these 5 quick steps to get up and running with Pleasantest. For more information, <a href="#">check out the documentation on GitHub.</a></p>
+  <div class="instructions-wrapper wrapper">
+    <div class="blurb">
+      <h2 style="color: #5b3bbc">Getting Started</h2>
+      <p class="intro">Follow these 5 quick steps to get up and running with Pleasantest. For more information, <a href="#">check out the documentation on GitHub.</a></p>
+    </div>
 
     <div class="step step1">
       <div class="circle"><h2>1</h2></div>
@@ -166,7 +168,7 @@ await user.click(
 <div class="footer">
   <div class="footer__inner">
     <div class="section">
-      <h2>Documentation</h2>
+      <h3>Documentation</h3>
       <ul>
         <li><a href="#">Github</a></li>
         <li><a href="#">NPM</a></li>
@@ -174,14 +176,14 @@ await user.click(
       </ul>
     </div>
     <div class="section">
-      <h2>Articles</h2>
+      <h3>Articles</h3>
       <ul>
         <li><a href="#">Introducing Pleasantest</a></li>
         <li><a href="#">Accessibility Tree Snapshots</a></li>
       </ul>
     </div>
     <div class="section">
-      <h2>Examples</h2>
+      <h3>Examples</h3>
       <ul>
         <li><a href="#">Testing a Reach Modal</a></li>
         <li><a href="#">Intregrating with Vite and Vue</a></li>

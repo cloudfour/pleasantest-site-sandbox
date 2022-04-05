@@ -95,7 +95,7 @@ body {
     top: -2px;
     left: -2px;
 
-    &:hover,
+    &:active,
     &:focus {
       top: 0;
       left: 0;
@@ -110,12 +110,11 @@ body {
       top: 0.5em;
       width: 100%;
       height: 100%;
-
       background-color: $white;
       transition: transform 250ms;
       z-index: -1;
     }
-    &:hover::after,
+    &:active::after,
     &:focus::after {
       transform: translate(0.5em, -0.5em);
     }
@@ -123,11 +122,11 @@ body {
 
   h2 {
     // font-size: $h2;
-    font-size: clamp(2rem, 2.25vw, 2.5rem);
+    font-size: clamp(1.5rem, 2.25vw, 2.5rem);
     font-family: $main-font, sans-serif;
   }
   h3 {
-    font-size: clamp(1.5rem, 1.5vw, 2rem);
+    font-size: clamp(1.35rem, 1.75vw, 1.75rem);
   }
 }
 
@@ -171,14 +170,13 @@ body {
     bottom: calc(var(--offset) * -1);
     right: var(--offset);
     top: var(--offset);
-    z-index: -1;
+    z-index: 1;
     border-radius: inherit;
-    // mix-blend-mode: luminosity;
+    mix-blend-mode: luminosity;
   }
 
   .heading-wrapper {
     text-align: center;
-    padding-bottom: $wrapper-padding;
     margin: 0 auto;
 
     @media only screen and (min-width: 50em) {
@@ -241,6 +239,12 @@ body {
 
       .get-started {
         background-color: $orange;
+        transition: .25s;
+
+        &:hover {
+          background-color: darken($orange, 5%);
+        }
+
         &::after {
           border: 3px solid darken($orange, 10%);
         }
@@ -249,6 +253,11 @@ body {
       .gh {
         background-color: $violet;
         margin-top: $spacing;
+        transition: .25s;
+
+        &:hover {
+          background-color: darken($violet, 10%);
+        }
         svg {
           fill: $white;
           vertical-align: middle;
@@ -275,6 +284,10 @@ body {
     }
   }
 
+  .wrapper {
+    padding-bottom: 5em;
+  }
+
   .highlight-wrapper {
     .section {
       display: grid;
@@ -285,7 +298,6 @@ body {
 
       h2 {
         grid-area: heading;
-        padding-top: 3em;
       }
 
       p {
@@ -339,12 +351,14 @@ body {
     }
 
     .highlight2 {
+      padding-top: $wrapper-padding;
       h2 {
         color: $violet;
       }
     }
 
     .highlight3 {
+      padding-top: $wrapper-padding;
       h2 {
         color: $orange;
       }
@@ -352,9 +366,12 @@ body {
   }
 
   .instructions-wrapper {
-    padding: $wrapper-padding 0;
     max-width: 40em;
     margin: 0 auto;
+
+    & > * + * {
+      margin-top: 2em;
+  }
 
     p {
       padding: 0.5em 0;
@@ -375,15 +392,18 @@ body {
         position: absolute;
         left: calc(var(--offset) * -0.75);
         bottom: calc(var(--offset) * -0.75);
-        right: 0.25em;
-        top: 0.25em;
-        z-index: -1;
+        right: 0.15em;
+        top: 0.15em;
+        z-index: 1;
         border-radius: inherit;
+        // mix-blend-mode: luminosity;
       }
     }
 
     .step {
-      padding: $spacing 0;
+      & > * + * {
+        margin-top: .5em;
+    }
       .circle {
         margin-bottom: $spacing;
         position: relative;
