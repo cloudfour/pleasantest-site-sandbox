@@ -1,6 +1,6 @@
 $grey: #4a4545;
 $white: #fff;
-$blue: #1045b4;
+$blue: #3f6ac3;
 $orange: #cb4c00;
 $orange-light: #f67c4c;
 $red: #c44f59;
@@ -117,8 +117,7 @@ body {
     &:hover::after {
       transform: translate(-6px, 6px);
     }
-    &:active::after,
-    &:focus::after {
+    &:active::after {
       transform: translate(0px, 0px);
     }
   }
@@ -137,13 +136,6 @@ body {
   padding: $spacing;
   max-width: 65em;
   margin: 0 auto;
-
-  .test {
-    // background-color: lighten($orange, 55%);
-    padding: 0;
-    margin: 0;
-    max-width: 100em;
-  }
 
   .code-wrapper {
     border-radius: $border-radius;
@@ -236,11 +228,6 @@ body {
 
       .get-started {
         background-color: $orange;
-        // transition: 0.25s;
-
-        // &::after {
-        //   border: 3px solid darken($orange, 10%);
-        // }
       }
 
       .gh {
@@ -260,6 +247,7 @@ body {
       }
 
       @media only screen and (min-width: 50em) {
+        padding-bottom: 0;
         display: flex;
 
         button {
@@ -286,23 +274,6 @@ body {
       & > * + * {
         margin-top: 1em;
       }
-      // display: grid;
-      // grid-template-areas:
-      //   "heading"
-      //   "image"
-      //   "content";
-
-      // h2 {
-      //   grid-area: heading;
-      // }
-
-      // p {
-      //   grid-area: content;
-      // }
-
-      // img {
-      //   grid-area: image;
-      // }
 
       @media only screen and (min-width: 50em) {
         margin: 0 auto;
@@ -349,14 +320,13 @@ body {
   .instructions-wrapper {
     max-width: 50em;
     margin: 0 auto;
-    // border: 1px solid blue;
 
     & > * + * {
       margin-top: 4em;
     }
 
     p {
-      padding: 0.75em 0;
+      padding: 0.5em 0;
     }
 
     .circle {
@@ -454,7 +424,7 @@ body {
       }
 
       .step-test {
-        padding-left: 2em;
+        padding-left: 1.5em;
         max-width: 40em;
         margin: 0 auto;
 
