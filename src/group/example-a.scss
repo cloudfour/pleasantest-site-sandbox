@@ -101,7 +101,7 @@ body {
     left: -2px;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       border: 3px solid darken($orange, 10%);
       border-radius: $border-radius;
@@ -109,7 +109,7 @@ body {
       right: -2px;
       bottom: -2px;
       left: -2px;
-      mix-blend-mode: multiply;
+      mix-blend-mode: screen;
       transform: translate(-4px, 4px);
       transition: transform 0.2s ease-out;
     }
@@ -177,7 +177,7 @@ body {
     top: var(--offset);
     z-index: 1;
     border-radius: inherit;
-    mix-blend-mode: luminosity;
+    mix-blend-mode: multiply;
     pointer-events: none;
   }
 
@@ -203,7 +203,6 @@ body {
         grid-area: tagline;
         align-self: end;
         text-align: left;
-        // min-width: 20em;
       }
 
       .ctas {
@@ -235,26 +234,19 @@ body {
     .ctas {
       padding-bottom: 2em;
 
-      // button {
-      //   width: 80%;
-      //   height: 2.5em;
-      //   border: none;
-      //   color: $white;
-      //   border-radius: $border-radius;
-      // }
-
       .get-started {
         background-color: $orange;
-        transition: .5s;
-        &::after {
-          border: 3px solid darken($orange, 10%);
-        }
+        // transition: 0.25s;
+
+        // &::after {
+        //   border: 3px solid darken($orange, 10%);
+        // }
       }
 
       .gh {
         background-color: $violet;
         margin-top: $spacing;
-        transition: .25s;
+        transition: 0.25s;
         &::after {
           border: 3px solid darken($violet, 10%);
         }
@@ -283,62 +275,52 @@ body {
   }
 
   .wrapper {
-    padding-bottom: 5em;
+    padding-bottom: 6em;
   }
 
   .highlight-wrapper {
+    & > * + * {
+      margin-top: 1em;
+    }
     .section {
-      display: grid;
-      grid-template-areas:
-        "heading"
-        "image"
-        "content";
-
-      h2 {
-        grid-area: heading;
+      & > * + * {
+        margin-top: 1em;
       }
+      // display: grid;
+      // grid-template-areas:
+      //   "heading"
+      //   "image"
+      //   "content";
 
-      p {
-        grid-area: content;
-        padding-top: $spacing;
-      }
+      // h2 {
+      //   grid-area: heading;
+      // }
 
-      img {
-        grid-area: image;
-        margin: $spacing 0;
-      }
+      // p {
+      //   grid-area: content;
+      // }
+
+      // img {
+      //   grid-area: image;
+      // }
 
       @media only screen and (min-width: 50em) {
-        padding-top: 10em;
         margin: 0 auto;
-        display: grid;
-        grid-template-areas:
-          "heading image"
-          "content image"
-          ". image";
-
-        h2 {
-          margin-top: 4em;
-          padding-right: 10em;
-        }
-
-        p {
-          padding-right: 12em;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .burp {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          width: 30em;
+          h2 {
+            padding-bottom: 0.5em;
+          }
         }
 
         &:nth-of-type(even) {
-          // text-align: right;
-          grid-template-areas:
-            "image heading"
-            "image content"
-            "image .";
-
-          h2 {
-          }
-          p {
-            // margin-left: 13em;
-            // padding-right: 0;
-          }
+          flex-direction: row-reverse;
         }
       }
     }
@@ -365,15 +347,16 @@ body {
   }
 
   .instructions-wrapper {
-    max-width: 40em;
+    max-width: 50em;
     margin: 0 auto;
+    // border: 1px solid blue;
 
     & > * + * {
-      margin-top: 2em;
-  }
+      margin-top: 4em;
+    }
 
     p {
-      padding: 0.5em 0;
+      padding: 0.75em 0;
     }
 
     .circle {
@@ -401,8 +384,8 @@ body {
 
     .step {
       & > * + * {
-        margin-top: .5em;
-    }
+        margin-top: 0.5em;
+      }
       .circle {
         margin-bottom: $spacing;
         position: relative;
@@ -457,10 +440,37 @@ body {
         }
       }
     }
-    @media only screen and (min-width: 50em) {
+    @media only screen and (min-width: 55em) {
       padding-top: 10em;
       .step {
         padding-top: 5em;
+        position: relative;
+
+        .circle {
+          position: absolute;
+          grid-area: number;
+          left: 1%;
+        }
+      }
+
+      .step-test {
+        padding-left: 2em;
+        max-width: 40em;
+        margin: 0 auto;
+
+        h3 {
+          grid-area: title;
+          justify-content: flex-end;
+          vertical-align: bottom;
+          align-items: flex-end;
+        }
+        p {
+          grid-area: content;
+        }
+
+        .offset {
+          grid-area: code;
+        }
       }
 
       .step6 {
