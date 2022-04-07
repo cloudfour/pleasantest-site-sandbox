@@ -197,12 +197,15 @@ body {
     padding-top: 0;
 
     @media only screen and (min-width: 50em) {
+      // padding-top: 2em;
       max-width: 100%;
       display: grid;
-      grid-gap: 3em;
-      grid-template-columns: 20em minmax(0, 1fr);
+      grid-gap: 2em;
+      grid-template-columns: 25em minmax(0, 1fr);
       grid-template-areas:
-        "logo logo"
+        // "logo logo"
+
+        "logo code"
         "tagline code"
         "ctas code";
 
@@ -212,8 +215,9 @@ body {
 
       .tagline {
         grid-area: tagline;
-        align-self: end;
+        padding-bottom: 1em;
         text-align: left;
+        margin-top: -1em;
       }
 
       .ctas {
@@ -226,7 +230,7 @@ body {
     }
 
     @media only screen and (min-width: 60em) {
-      grid-template-columns: 50% minmax(0, 1fr);
+      grid-template-columns: 55% minmax(0, 1fr);
     }
 
     .logo {
@@ -462,7 +466,11 @@ body {
 .footer {
   color: $white;
   background-image: linear-gradient($violet, $eggplant);
+  // background-image: url(/../assets/images/test.png);
+  background-size: contain;
+  background-position: 5%;
   padding: $spacing;
+  // height: 20em;
 
   .footer__inner {
     max-width: 70em;
