@@ -33,6 +33,7 @@ css:
   withBrowser(async ({
     screen, utils, page, user
   }) => {
+
   // Find the hikes button
   const hikesButton =
   await screen.getByRole(
@@ -103,15 +104,15 @@ css:
         <div class="offset">
           <div class="code-wrapper">
           <pre class="code-block"><code class="language-js">// If you want to use module imports you’ll need to configure
-  //  Jest and Babel to use ESM
-  // See https://jestjs.io/docs/getting-started#using-babel
-  const {withBrowser} = require(‘pleasantest’);
+// Jest and Babel to use ESM
+// See https://jestjs.io/docs/getting-started#using-babel
+const {withBrowser} = require('pleasantest');
 
-  test(
-    'test name',
-    withBrowser(async () => {
-      // Your test code here
-    }),
+test(
+  'test name',
+  withBrowser(async () => {
+    // Your test code here
+  }),
 );</code></pre>
           </div>
         </div>
@@ -125,20 +126,20 @@ css:
         <div class="offset">
           <div class="code-wrapper">
         <pre class="code-block"><code class="language-js">// For JS frameworks you can run arbitrary JavaScript
+// (./app could be a .js, .jsx .ts, or .tsx file)
 await utils.runJS(`
-  // ./app could be a .js, .jsx .ts, or .tsx file
   import { App } from './app'
   import { render } from 'react-dom'
 
   render(<App />, document.body)
-  `);
-  // You can also insert HTML
-  (This works well with templating languages)
-  await utils.injectHTML('<h1>Find Hikes</h1>');
+`);
 
-  // Tests can also be run by navigating
-  to URLs within your app:
-  await page.goto('http://localhost:3000/hikes');</code></pre>
+// You can also insert HTML
+// (This works well with templating languages)
+await utils.injectHTML('<h1>Find Hikes</h1>');
+
+// Tests can also be run by navigating to URLs within your app:
+await page.goto('http://localhost:3000/hikes');</code></pre>
           </div>
         </div>
       </div>
@@ -150,19 +151,14 @@ await utils.runJS(`
         <p>Pleasantest comes prepackaged with helpful utilities to find and interact with elements like a real user:</p>
         <div class="offset">
           <div class="code-wrapper">
-            <pre class="code-block"><code class="language-js">await user.type(
-  await screen.getByRole('
-    'textbox',
-    { name: 'Pick a Location' }
-  ),
-  'Portland Oregon'
-);
-await user.click(
-  await screen.getByRole('
-    button,
-    { name: 'Find Hikes' }
-  )
-);</code></pre>
+            <pre class="code-block"><code class="language-js">const locationInput = await screen.getByRole( 'textbox', {
+  name: 'Pick a Location'
+});
+const submitButton = await screen.getByRole(‘button’, {
+  name: 'Find Hikes'
+});
+await user.type(locationInput, 'Portland Oregon');
+await user.click(submitButton);</code></pre>
           </div>
         </div>
       </div>
@@ -174,7 +170,8 @@ await user.click(
         <p>Use Jest-Dom’s intuitive syntax to confirm your interface responds correctly to user actions:</p>
         <div class="offset">
           <div class="code-wrapper">
-            <pre class="code-block"><code class="language-js">await expect(hikeResults).toBeVisible();</code></pre>
+            <pre class="code-block"><code class="language-js">await expect(submitButton).toHaveFocus();
+await expect(hikeResults).toBeVisible();</code></pre>
           </div>
         </div>
       </div>
