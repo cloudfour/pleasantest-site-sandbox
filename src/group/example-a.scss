@@ -115,16 +115,15 @@ body {
     &:active::after {
       transform: translate(0, 0);
     }
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 5px $green;
+      transform: translate(0, 0);
+    }
 
-    // &:focus-visible {
-    //   outline: none;
-    //   // border: 3px solid $blue;
-    //   background-color: cadetblue;
-    // }
-
-    // &:focus-visible::after {
-    //   display: none;
-    // }
+    &:focus-visible::after {
+      transform: translate(0, 0);
+    }
   }
 
   h2 {
@@ -258,22 +257,6 @@ body {
 
       .get-started {
         background-color: $orange;
-        &:focus-visible {
-          outline: none;
-          box-shadow: 0 0 0 4px $violet;
-
-          // border: 3px solid $blue;
-          // background-color: darken($orange, 10%);
-          // box-shadow: 0 0 0 3px white;
-          // border: 3px solid white;
-        }
-
-        &:focus-visible::after {
-          display: none;
-          // box-shadow: 0 0 0 4px $violet;
-          // border: 1px solid white;
-          // border: 3px solid violet;
-        }
       }
 
       .gh {
@@ -282,14 +265,6 @@ body {
         transition: 0.25s;
         &::after {
           border: 2px solid darken($violet, 10%);
-        }
-
-        &:focus-visible {
-          outline: none;
-        }
-
-        &:focus-visible::after {
-          box-shadow: 0 0 0 4px $orange;
         }
 
         svg {
@@ -484,7 +459,7 @@ body {
   background-size: 100% calc(100% + 5vw);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 656 1032' class='wave-backdrop'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:url(%23SVGID_1_);%7D%0A%3C/style%3E%3Cdefs%3E%3ClinearGradient id='SVGID_1_' gradientUnits='userSpaceOnUse' x1='-71.2313' y1='962.6215' x2='738.9745' y2='152.4157'%3E%3Cstop offset='0' style='stop-color:%232B1278'/%3E%3Cstop offset='1' style='stop-color:%23482762'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath class='st0' d='M660.5,73.9c0,0-57.2,31.8-180.4,31.8S284.5,43.4,166.4,43.4C83.8,43.4-1.3,93-1.3,93v939.6l657,2.9L660.5,73.9 z'/%3E%3C/svg%3E");
   padding: 2em;
-  padding-top: 8em;
+  padding-top: 5em;
 
   .footer__inner {
     max-width: 70em;
