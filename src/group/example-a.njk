@@ -34,12 +34,15 @@ css:
     screen, utils, page, user
   }) => {
   // Find the hikes button
-  const hikesButton = await screen.getByRole(
+  const hikesButton =
+  await screen.getByRole(
     'button',
     { name: 'View Hikes' }
   );
+
   // Click it
   await user.click(aboutBtn);
+
   // Confirm the hikes heading is visible
   await await screen.getByRole(
     heading,
@@ -128,7 +131,14 @@ await utils.runJS(`
   import { render } from 'react-dom'
 
   render(<App />, document.body)
-  `);</code></pre>
+  `);
+  // You can also insert HTML
+  (This works well with templating languages)
+  await utils.injectHTML('<h1>Find Hikes</h1>');
+
+  // Tests can also be run by navigating
+  to URLs within your app:
+  await page.goto('http://localhost:3000/hikes');</code></pre>
           </div>
         </div>
       </div>
