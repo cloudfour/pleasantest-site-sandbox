@@ -172,11 +172,17 @@ body {
     pre {
       margin: 0;
       &:focus-visible {
-        box-shadow: 0 0 0 2px $green;
         outline: none;
-        border-radius: $border-radius;
       }
     }
+  }
+
+  .code-wrapper:focus-within {
+    box-shadow: 0 0 0 2px $green;
+  }
+
+  .offset:focus-within::before {
+    border-color: $green;
   }
 
   .offset {
