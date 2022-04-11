@@ -69,11 +69,9 @@ body {
 
   a {
     color: $orange;
-    text-decoration: none;
 
     &:hover {
       color: darken($orange, 10%);
-      text-decoration: underline;
     }
 
     &:focus-visible {
@@ -465,6 +463,14 @@ body {
         max-width: 40em;
         margin: 0 auto;
         position: relative;
+        p {
+          code {
+            padding: 0.15em 0.25em;
+            border-radius: $border-radius;
+            background-color: #ebebeb;
+            color: $violet;
+          }
+        }
       }
     }
   }

@@ -79,7 +79,7 @@ css:
   </div>
   <div class="instructions-wrapper wrapper">
     <div class="content">
-      <h2 style="color: #5b3bbc">Getting Started</h2>
+      <h2 style="color: #3f6ac3">Getting Started</h2>
       <p class="intro">Follow these 5 quick steps to get up and running with Pleasantest. For more information, <a href="#">check out the documentation on GitHub.</a></p>
     </div>
 
@@ -100,7 +100,7 @@ css:
       <div class="step__inner">
         <div class="circle"><h2>2</h2></div>
         <h3>Write your first test</h3>
-        <p>Now you’re ready to write your first test! Wrapping your test callback with `withBrowser` allows you to hook into a real browser with Pleasantest:</p>
+        <p>Now you’re ready to write your first test! Wrapping your test callback with <code>withBrowser</code> allows you to hook into a real browser with Pleasantest:</p>
         <div class="offset">
           <div class="code-wrapper">
           <pre class="code-block"><code class="language-js">// If you want to use module imports you’ll need to configure
@@ -131,7 +131,7 @@ await utils.runJS(`
   import { App } from './app'
   import { render } from 'react-dom'
 
-  render(<App />, document.body)
+  render(< App />, document.body)
 `);
 
 // You can also insert HTML
