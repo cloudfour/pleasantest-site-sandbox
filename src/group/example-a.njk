@@ -84,7 +84,7 @@ css:
     </div>
 
     <div class="step step1">
-      <div class="step-test">
+      <div class="step__inner">
         <div class="circle"><h2>1</h2></div>
         <h3>Install Jest and Pleasantest</h3>
         <p>Pleasantest integrates with Jest tests. If you haven't set up Jest yet, <a href="#">here is Jest's getting started guide.</a></p>
@@ -97,7 +97,7 @@ css:
       </div>
     </div>
     <div class="step step2">
-      <div class="step-test">
+      <div class="step__inner">
         <div class="circle"><h2>2</h2></div>
         <h3>Write your first test</h3>
         <p>Now you’re ready to write your first test! Wrapping your test callback with `withBrowser` allows you to hook into a real browser with Pleasantest:</p>
@@ -119,7 +119,7 @@ test(
       </div>
     </div>
     <div class="step step3">
-      <div class="step-test">
+      <div class="step__inner">
         <div class="circle"><h2>3</h2></div>
         <h3>Add UI markup to your test:</h3>
         <p>Once you’ve created a test there are three ways to insert markup:</p>
@@ -145,7 +145,7 @@ await page.goto('http://localhost:3000/hikes');</code></pre>
       </div>
     </div>
     <div class="step step4">
-      <div class="step-test">
+      <div class="step__inner">
         <div class="circle"><h2>4</h2></div>
         <h3>Interact With Your App In a Real Browser</h3>
         <p>Pleasantest comes prepackaged with helpful utilities to find and interact with elements like a real user:</p>
@@ -164,7 +164,7 @@ await user.click(submitButton);</code></pre>
       </div>
     </div>
     <div class="step step5">
-      <div class="step-test">
+      <div class="step__inner">
         <div class="circle"><h2>5</h2></div>
         <h3>Make Assertions Against the DOM</h3>
         <p>Use Jest-Dom’s intuitive syntax to confirm your interface responds correctly to user actions:</p>
@@ -177,7 +177,7 @@ await expect(hikeResults).toBeVisible();</code></pre>
       </div>
     </div>
     <div class="step step6">
-      <div class="step-test">
+      <div class="step__inner">
         <div class="circle"><h2>6</h2></div>
         <h3>Run your tests</h3>
         <p>Now you can use the Jest CLI commands (link) to run your tests. The <a href="#">testTimeout</a> flag tells Jest to allow the test to run for up to 10 seconds, which is necessary for the first time Pleasantest starts the browser.</p>
