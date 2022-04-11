@@ -1,4 +1,5 @@
 $grey: #4a4545;
+$grey-light: #ebebeb;
 $white: #fff;
 $blue: #3f6ac3;
 $orange: #cb4c00;
@@ -467,7 +468,7 @@ body {
           code {
             padding: 0.15em 0.25em;
             border-radius: $border-radius;
-            background-color: #ebebeb;
+            background-color: $grey-light;
             color: $violet;
           }
         }
@@ -523,7 +524,7 @@ body {
 .token.comment,
 .token.doctype,
 .token.prolog {
-  color: #dedede;
+  color: $grey-light;
 }
 .token.punctuation {
   opacity: 0.7;
