@@ -69,6 +69,17 @@ body {
 
   a {
     color: $orange;
+    text-decoration: none;
+
+    &:hover {
+      color: darken($orange, 10%);
+      text-decoration: underline;
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px $green;
+    }
   }
 
   button {
