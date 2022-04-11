@@ -168,10 +168,14 @@ body {
     overflow-x: auto;
     text-align: left;
     position: relative;
-    // max-width: 100%;
 
     pre {
       margin: 0;
+      &:focus-visible {
+        box-shadow: 0 0 0 2px $green;
+        outline: none;
+        border-radius: $border-radius;
+      }
     }
   }
 
@@ -538,7 +542,7 @@ body {
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  color: #65dc90;
+  color: $green;
 }
 .token.important,
 .token.regex {
@@ -553,7 +557,4 @@ body {
 }
 .token.entity {
   cursor: help;
-}
-.token.deleted {
-  color: red;
 }
