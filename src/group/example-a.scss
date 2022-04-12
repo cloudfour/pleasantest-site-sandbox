@@ -187,20 +187,20 @@ body {
   .offset {
     position: relative;
     border-radius: $border-radius;
-    align-self: center;
+    // align-self: center;
   }
 
   .offset::before {
     border: 2px solid $violet;
     content: "";
     position: absolute;
-    left: calc(var(--offset) * -1);
-    bottom: calc(var(--offset) * -1);
-    right: var(--offset);
-    top: var(--offset);
+    left: calc(var(--offset) * -0.5);
+    bottom: calc(var(--offset) * -0.5);
+    right: calc(var(--offset) * 0.5);
+    top: calc(var(--offset) * 0.5);
     z-index: 1;
     border-radius: inherit;
-    mix-blend-mode: multiply;
+    mix-blend-mode: difference;
     pointer-events: none;
   }
 
@@ -215,7 +215,7 @@ body {
     text-align: center;
     margin: 0 auto;
 
-    @media only screen and (min-width: 50em) {
+    @media only screen and (min-width: 65em) {
       max-width: 100%;
       display: grid;
       grid-gap: 2em;
@@ -245,7 +245,7 @@ body {
       }
     }
 
-    @media only screen and (min-width: 60em) {
+    @media only screen and (min-width: 65em) {
       grid-template-columns: 55% minmax(0, 1fr);
     }
 
@@ -259,7 +259,7 @@ body {
 
     h2 {
       padding: 2em 0;
-      @media only screen and (min-width: 60em) {
+      @media only screen and (min-width: 65em) {
         padding: 0;
       }
     }
@@ -291,7 +291,7 @@ body {
         }
       }
 
-      @media only screen and (min-width: 50em) {
+      @media only screen and (min-width: 65em) {
         padding-bottom: 0;
         display: flex;
 
@@ -316,7 +316,7 @@ body {
         margin-top: 1em;
       }
 
-      @media only screen and (min-width: 50em) {
+      @media only screen and (min-width: 60em) {
         margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
