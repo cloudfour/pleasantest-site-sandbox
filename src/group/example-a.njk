@@ -45,10 +45,10 @@ css:
   await user.click(aboutBtn);
 
   // Confirm the hikes heading is visible
-  await await screen.getByRole(
+  await expect(await screen.getByRole(
     heading,
     { name: 'Hikes Near You' }
-  ).toBeVisible();
+  )).toBeVisible();
 );</code></pre>
       </div>
     </div>
