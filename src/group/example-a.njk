@@ -45,10 +45,10 @@ css:
   await user.click(aboutBtn);
 
   // Confirm the hikes heading is visible
-  await await screen.getByRole(
+  await expect(await screen.getByRole(
     heading,
     { name: 'Hikes Near You' }
-  ).toBeVisible();
+  )).toBeVisible();
 );</code></pre>
       </div>
     </div>
@@ -154,7 +154,7 @@ await page.goto('http://localhost:3000/hikes');</code></pre>
             <pre class="code-block"><code class="language-js">const locationInput = await screen.getByRole( 'textbox', {
   name: 'Pick a Location'
 });
-const submitButton = await screen.getByRole(‘button’, {
+const submitButton = await screen.getByRole('button', {
   name: 'Find Hikes'
 });
 await user.type(locationInput, 'Portland Oregon');
