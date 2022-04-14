@@ -337,6 +337,18 @@ body {
       }
     }
 
+    .one {
+      padding-top: 1em;
+      margin: 0 auto;
+
+      @media only screen and (min-width: 60em) {
+        width: 50vw;
+        max-width: 700px;
+        margin: 0;
+        padding-top: 0;
+      }
+    }
+
     .highlight1 {
       h2 {
         color: $red;
