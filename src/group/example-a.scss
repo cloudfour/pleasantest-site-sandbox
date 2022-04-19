@@ -200,7 +200,7 @@ body {
     top: calc(var(--offset) * 0.5);
     z-index: 1;
     border-radius: inherit;
-    mix-blend-mode: difference;
+    mix-blend-mode: multiply;
     pointer-events: none;
   }
 
